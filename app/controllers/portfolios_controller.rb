@@ -1,4 +1,7 @@
 class PortfoliosController < ApplicationController
+    before_action :set_port, only: [:show, :edit, :update, :destroy]
+
+
     def index
         @portfolio_items = Portfolio.all
     end
@@ -13,10 +16,33 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: 'Portfolio item was successfully created.' }
-        format.json { render :show, status: :created, location: @portfolio_item }
       else
         format.html { render :new }
       end
     end
     end
+    
+    def edit
+        @portfolio_item = Portfolio.find(params[:id])
+    end
+    
+    def update
+        @portfolio_item = Portfolio.find(params[:id])
+        respond_to do |format|
+          if @portfolio_item.update(params.require(:portfolio).permit(:title, :subtitle, :body))
+            format.html { redirect_to portfolios_path, notice: 'Portfolio item was successfully updated.' }
+          else
+            format.html { render :edit }
+          end
+        end
+    end
+    
+    def show
+      @portfolio_item = Portfolio.find(params[:id])
+    end
+    
+    def set_port
+        @portfolio_item = Portfolio.find(params[:id])
+    end
+
 end
