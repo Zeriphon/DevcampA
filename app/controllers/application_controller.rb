@@ -17,4 +17,10 @@ class ApplicationController < ActionController::Base
   def set_title
     @page_title = "Devcamp Portfolio | My Portfolio Website"
   end
+  
+  def set_copyright
+    @copyright = AciViewTool::Renderer.copyright 'Aciojn Quazson', 'All rights yet to be reserved.'
+  end
 end
+
+
