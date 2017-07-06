@@ -15,8 +15,4 @@ module ApplicationHelper
             content_tag(:p, greeting, class: "source-greeting")
         end
     end
-    
-    def copyright_generator
-        AciViewTool::Renderer.copyright 'Aciojn Quazson', 'All rights yet to be reserved.'
-    end
 end
