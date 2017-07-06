@@ -54,3 +54,4 @@ gem 'devise', '~> 4.2'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
 gem 'aci_view_tool', git: 'https://github.com/Zeriphon/DevcampB'
+gem 'petergate', '~> 1.7', '>= 1.7.5'
