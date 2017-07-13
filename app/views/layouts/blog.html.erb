@@ -30,6 +30,7 @@
       <div class="container">
         <h1 class="blog-title">Aciojn Quazson</h1>
         <p class="lead blog-description">examplar blog</p>
+        <%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin) %>
       </div>
     </div>
     
@@ -52,12 +53,12 @@
           </div>
           <div class="sidebar-module">
             <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="">asdf</a></li>
+            <ol class="list-unstyled social-links">
+              <li>There is no elsewhere currently.</li>
             </ol>
           </div>
         </div>
+        <%= render "shared/application_footer" %>
       </div>
-    </div>
   </body>
 </html>
